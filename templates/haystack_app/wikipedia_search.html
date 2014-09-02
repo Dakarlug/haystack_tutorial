@@ -1,0 +1,37 @@
+{% extends 'admin/base_site.html' %}
+
+{% block content %}
+    <h2>Search</h2>
+
+    <form method="get" action=".">
+        <table>
+            {{ form.as_table }}
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <input type="submit" value="Search">
+                </td>
+            </tr>
+        <table>
+
+        {% if json %}
+            <h3>Results</h3>
+	    <table>
+            {% for data in json %}
+                
+                <tr> 
+                <td
+                    <a href="#">{{ data.0 }}</a>
+                </td>
+		<td
+                    <a href="#">{{ data.1 }}</a>
+                </td>
+		</tr>
+            {% endfor %}
+            <table>
+        {% else %}
+              <p>No results found.</p>
+        {% endif %}
+    </form>
+{% endblock %}
+
