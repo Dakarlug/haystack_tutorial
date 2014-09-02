@@ -55,7 +55,7 @@ Form shearch
 ============
 Same as the django form. you create your search form here 
 
-   SFDSearchForm
+    SFDSearchForm
 
 
 Model Index
@@ -65,9 +65,17 @@ stucture. Elasticshearh will use it when it create schema of
 the document
 
 
+
+    >>python manage.py updateindex -v2
+    >>Indexing 1 sfd events
+    >>indexed 1 - 1 of 1 (by 4083).
+
+
 Wikipedia-Index
 ===============
 To test performance search we will index wikipedia is dataBase
+
+
 
 Run 
 ===

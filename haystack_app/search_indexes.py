@@ -12,16 +12,16 @@ http://okfnlabs.org/blog/2013/07/01/elasticsearch-query-tutorial.html
 import json, urllib2
 import datetime
 from haystack import indexes
-from haystack_app.models import SFDEvent
+from haystack_tutorial.haystack_app.models import SFDEvent
 
-class SFDIndex(indexes.SearchIndex, indexes.Indexable):
-    title = indexes.CharField(document=True, use_template=True)
-    author = indexes.CharField(model_attr='user')
+class SFDEventIndex(indexes.SearchIndex, indexes.Indexable):
+    text = indexes.CharField(document=True, use_template=True)
+    title = indexes.CharField(model_attr='title')
     pub_date = indexes.DateTimeField(model_attr='pub_date')
-    description = indexes.CharField(document=True, use_template=True)
+    description = indexes.CharField(model_attr='description')
    
     def get_model(self):
-        return SFD
+        return SFDEvent	
 
     def index_queryset(self, using=None):
         """Used when the entire index for model is updated."""
