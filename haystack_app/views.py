@@ -7,7 +7,7 @@ from haystack_tutorial.haystack_app.search_indexes import WikiPediaIndex
 
 @login_required
 def wikipedia_search(request):
-   wiki_form, json, out = WikiPediaForm(),{}, []
+   wiki_form, json, out, data = WikiPediaForm(),{}, [] ,[]
    if request.GET:
       wiki_form = WikiPediaForm(request.GET)
       if  wiki_form.is_valid():
