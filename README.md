@@ -6,7 +6,7 @@ In this tutorial , we are going together to learn  how
 elasticsearch  work . We will first implement a basic app in 
 django with the Python Haystack librairy to demostrate how to use 
 Elasticshearh in production context . And to test performance we 
-will index The wikipedia and shearch trought it database .
+will index The wikipedia and shearch throught it database .
 
 
 This Tutorial is motived ater watching This Video 
@@ -24,11 +24,11 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/index-modu
 So For Banon. increasing node indenitly does not really Help Performance
 search but you need to manage performance search with sharding . 
 please This is an important point for tunning elasticsearch. 
-So If I mis-anderstand something. do not hesite to correcte me /
+So If I mis-understand something. do not hesite to correcte me /
 
 Look at this following elasticsearch configuration . with the
-first you get hight avaibility of data . but you you don' t gain
-performance shearch . In the second . sharding between Node are
+two you get hight avaibility of data . but  you don' t gain
+performance shearch . How ever in the first . sharding between Node are
 perfect and you get more performance search.
 
 Flow oNe
@@ -48,16 +48,16 @@ Flow Two
 
 Installation
 ===========
-You can install django with postgres and elasticsearch by doing and all 
-plugin we need [wikipedia] with /make. Check The wikipedia Plugin documen
-tation Here http://wikipidia.org .
+You can install django with postgres and elasticsearch and all 
+plugin we need as wikipedia  with /make.sh script . Check The 
+wikipedia Plugin documentation Here https://github.com/elasticsearch/elasticsearch-river-wikipedia.
 
     ./make
 
 For the reste you can check The Haystack documentation before
 reading this python class
   
-     hasytack_app.search_indexes.py
+     haystack_app.search_indexes.py
 
    
 
@@ -85,11 +85,11 @@ Wikipedia-Index
 To test performance search we will index wikipedia dataBase
 .Look at theses following classes .
 
-     hasytack_app.search_indexes.py
+     haystack_app.search_indexes.py
      
-     hasytack_app.forms.py
+     haystack_app.forms.py
      
-     hasytack_app.views.py
+     haystack_app.views.py
 
 
 
@@ -110,9 +110,12 @@ Run
     ./manage.py updateindex -v2
     ./manage.py runserver
 
- 
+    Django version 1.6, using settings 'haystack_tutorial.settings'
+    Starting development server at http://127.0.0.1:8000/
+    Quit the server with CONTROL-C.
 
-Go To http//localhost
+
+Go To http://127.0.0.1:8000/
 
 
 
